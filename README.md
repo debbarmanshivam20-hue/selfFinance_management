@@ -25,7 +25,7 @@ A modern, offline-first personal finance and expense tracking application built 
 ---
 
 ## Project Structure
-``text
+
 lib/
 ├── app.dart                    # Application configuration & root widget
 ├── main.dart                   # Entry point
