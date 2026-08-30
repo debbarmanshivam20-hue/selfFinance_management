@@ -1,0 +1,92 @@
+name: finvault
+description: "FinVault - offline personal finance management."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management (single system across the whole app)
+  flutter_riverpod: ^2.6.1
+
+  # Local database (SQLite via drift) - the single source of truth
+  drift: ^2.31.0
+  drift_flutter: ^0.2.8
+  sqlite3_flutter_libs: ^0.5.42
+
+  # Filesystem / paths for the database file and JSON backups
+  path_provider: ^2.1.5
+  path: ^1.9.1
+
+  # Charts
+  fl_chart: ^1.2.0
+
+  # Formatting (currency, dates) - fully offline
+  intl: ^0.20.3
+
+  # Backup import / export
+  file_picker: ^11.0.3
+  share_plus: ^12.0.2
+
+  # Lightweight declarative animations
+  flutter_animate: ^4.5.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  drift_dev: ^2.31.0
+  build_runner: ^2.4.13
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.6
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/branding/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter.ttf
+
+# ---------------------------------------------------------------------------
+# Android launcher icon (adaptive + legacy). Run:
+#   dart run flutter_launcher_icons
+# ---------------------------------------------------------------------------
+flutter_launcher_icons:
+  android: "ic_launcher"
+  ios: false
+  image_path: "assets/branding/app_icon.png"
+  adaptive_icon_background: "#0B0F14"
+  adaptive_icon_foreground: "assets/branding/app_icon_foreground.png"
+  adaptive_icon_monochrome: "assets/branding/app_icon_monochrome.png"
+  min_sdk_android: 23
+  remove_alpha_ios: true
+
+# ---------------------------------------------------------------------------
+# Branded splash screen (replaces the default Flutter splash). Run:
+#   dart run flutter_native_splash:create
+# ---------------------------------------------------------------------------
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: "assets/branding/splash_light.png"
+  color_dark: "#0B0F14"
+  image_dark: "assets/branding/splash_dark.png"
+  android_12:
+    color: "#FFFFFF"
+    image: "assets/branding/splash_android12.png"
+    icon_background_color: "#FFFFFF"
+    color_dark: "#0B0F14"
+    image_dark: "assets/branding/splash_android12.png"
+    icon_background_color_dark: "#0B0F14"
+  android: true
+  ios: false
+  web: false
